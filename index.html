@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+Create a database,give it name like human resource create a collection inside this named "employee"
+
+test> use Human_Resources
+switched to db Human_Resources
+Human_Resources> db.employee.find()
+Human_Resources> db.employee.insertMany([{ "name":"vamshi", "salary":55000, "experience":2, "gradyear":2022, "lastcompany":"x" },{"name":"vivek","salary":77000,"experience":4,"gradyear":2023,"lastcompany":"y"},{"name":"pavan","salary":55000,"experience":3,"gradyear":2021,"lastcompany":"z"},{"name":"manish","salary":55000,"experience":3,"gradyear":2022,"lastcompany":"y"},{"name":"kalyan","salary":70000,"experience":2,"gradyear":2020,"lastcompany":"z"},{"name":"vardhan","salary":66000,"experience":3,"gradyear":2022,"lastcompany":"y"},{"name":"vishal","salary":65000,"experience":2,"gradyear":2022,"lastcomapny":"z"},{"name":"satya","salary":76000,"experience":3,"gradyear":2019,"lastcompany":"z"},{"name":"giriraj","salary":65000,"experience":3,"gradyear":2019,"lastcompany":"x"},{"name":"naveen","salary":65000,"experience":3,"gradyear":2019,"lastcompany":"x"}])
+Query1 Query the collection "employees" and list all the documents
+Human_Resources> db.employee.find()
+[
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5a"),
+    name: 'vamshi',
+    salary: 55000,
+    experience: 2,
+    gradyear: 2022,
+    lastcompany: 'x'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5b"),
+    name: 'vivek',
+    salary: 77000,
+    experience: 4,
+    gradyear: 2023,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5c"),
+    name: 'pavan',
+    salary: 55000,
+    experience: 3,
+    gradyear: 2021,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5d"),
+    name: 'manish',
+    salary: 55000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5e"),
+    name: 'kalyan',
+    salary: 70000,
+    experience: 2,
+    gradyear: 2020,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5f"),
+    name: 'vardhan',
+    salary: 66000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c60"),
+    name: 'vishal',
+    salary: 65000,
+    experience: 2,
+    gradyear: 2022,
+    lastcomapny: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c61"),
+    name: 'satya',
+    salary: 76000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c62"),
+    name: 'giriraj',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c63"),
+    name: 'naveen',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  }
+]
+Query2 Query the collection "employees" and list all the employees
+whose salary more than 30000
+Human_Resources> db.employee.find({"salary":{"$gt":30000}})
+[
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5a"),
+    name: 'vamshi',
+    salary: 65000,
+    experience: 2,
+    gradyear: 2022,
+    lastcompany: 'x'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5b"),
+    name: 'vivek',
+    salary: 65000,
+    experience: 4,
+    gradyear: 2023,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5c"),
+    name: 'pavan',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2021,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5d"),
+    name: 'manish',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5e"),
+    name: 'kalyan',
+    salary: 65000,
+    experience: 2,
+    gradyear: 2020,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5f"),
+    name: 'vardhan',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c60"),
+    name: 'vishal',
+    salary: 65000,
+    experience: 2,
+    gradyear: 2022,
+    lastcomapny: '',
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c61"),
+    name: 'satya',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c62"),
+    name: 'giriraj',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c63"),
+    name: 'naveen',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  }
+]
+
+
+Query3 Query the collection "employees" and list all the employees
+who has experience more than 2yrs
+Human_Resources> db.employee.find({"experience":{"$gt":2}})
+[
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5b"),
+    name: 'vivek',
+    salary: 77000,
+    experience: 4,
+    gradyear: 2023,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5c"),
+    name: 'pavan',
+    salary: 55000,
+    experience: 3,
+    gradyear: 2021,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5d"),
+    name: 'manish',
+    salary: 55000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5f"),
+    name: 'vardhan',
+    salary: 66000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c61"),
+    name: 'satya',
+    salary: 76000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c62"),
+    name: 'giriraj',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c63"),
+    name: 'naveen',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  }
+]
+Query4 Query the collection "employees" and list all the employees
+who are graduated after 2015 and having experience more than  year
+Human_Resources> db.employee.find({"gradyear":{"$gt":2015},"experience":{"$gt":1}})
+[
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5a"),
+    name: 'vamshi',
+    salary: 55000,
+    experience: 2,
+    gradyear: 2022,
+    lastcompany: 'x'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5b"),
+    name: 'vivek',
+    salary: 77000,
+    experience: 4,
+    gradyear: 2023,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5c"),
+    name: 'pavan',
+    salary: 55000,
+    experience: 3,
+    gradyear: 2021,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5d"),
+    name: 'manish',
+    salary: 55000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5e"),
+    name: 'kalyan',
+    salary: 70000,
+    experience: 2,
+    gradyear: 2020,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c5f"),
+    name: 'vardhan',
+    salary: 66000,
+    experience: 3,
+    gradyear: 2022,
+    lastcompany: 'y'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c60"),
+    name: 'vishal',
+    salary: 65000,
+    experience: 2,
+    gradyear: 2022,
+    lastcomapny: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c61"),
+    name: 'satya',
+    salary: 76000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'z'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c62"),
+    name: 'giriraj',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  },
+  {
+    _id: ObjectId("64d31140b4c3489f28cd7c63"),
+    name: 'naveen',
+    salary: 65000,
+    experience: 3,
+    gradyear: 2019,
+    lastcompany: 'x'
+  }
+] 
+Query5 Query the collection "employees" and list all the employees
+whose salary is greater than 70000 to 65000
+Human_Resources> db.employee.updateMany({"salary":{"$gt":70000}},{$set:{"salary":65000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+Query6 Query the collection "employees and list all the employees where last company is Y
+Human_Resources> db.employee.deleteMany({"lastcompany":"y"});
+{ acknowledged: true, deletedCount: 3 }
+
+
+</pre>
+</body>
+</html>
